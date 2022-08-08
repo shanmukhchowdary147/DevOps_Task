@@ -1,14 +1,9 @@
-FROM python:3.9
-
-WORKDIR /usr/src/app
-COPY ./requirements.txt ./
-RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r requirements.txt
-ADD ./model ./model
-ADD ./data ./data
-COPY ./application.py ./
-ADD ./templates ./templates
+FROM python:3.8-alpine
+RUN mkdir /app
+ADD . /app
+WORKDIR /app
+RUN pip install -r requirements.txt
 
 EXPOSE 5000
 
-CMD ["python", "application.py" ]
+CMD ["python", "app.py" ]
