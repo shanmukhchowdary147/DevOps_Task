@@ -14,9 +14,9 @@ jobs:
         with:
           lfs: 'true'
       - name: Build the Docker image
-        run: docker build -t shanmukh147/devopstask -f Dockerfile .
+        run: sudo su && docker build -t shanmukh147/devopstask -f Dockerfile .
       - name: Generate Deployment Package
-        run: zip -r deploy.zip *
+        run: sudo su && zip -r deploy.zip *
 
       - name: Checkout the files
         uses: actions/checkout@v2
