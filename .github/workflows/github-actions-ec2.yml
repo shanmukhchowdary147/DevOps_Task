@@ -25,5 +25,5 @@ jobs:
         uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
-          REMOTE_HOST: 'ec2-54-64-175-190.ap-northeast-1.compute.amazonaws.com'
-          REMOTE_USER: 'ubuntu'
+          REMOTE_HOST: ${{ secrets.HOST_DNS }}
+          REMOTE_USER: ${{ secrets.USERNAME }}
