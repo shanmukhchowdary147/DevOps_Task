@@ -49,6 +49,6 @@ jobs:
 
             #Now we have got the access of EC2 and we will start the deploy .
             docker kill $(docker ps -q)
-            docker build -t shanmukh147/devopstask.
+            docker build -t shanmukh147/devopstask .
             docker run -p 8080:5000 -d shanmukh147/devopstask
             '
