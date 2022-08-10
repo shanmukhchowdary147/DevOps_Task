@@ -1,0 +1,8 @@
+version: '3.9'
+services:
+  app:
+    build:
+      context: .
+    image: 729008907934.dkr.ecr.ap-south-1.amazonaws.com/devopstask
+    ports:
+      - '5001:5000'
