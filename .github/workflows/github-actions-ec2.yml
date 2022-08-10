@@ -31,8 +31,7 @@ jobs:
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
 
-      name: deploy to EC2
-      steps:
+      - name: deploy to EC2
         - name: ssh into EC2
           uses: easingthemes/ssh-deploy@main
           env:
@@ -41,4 +40,3 @@ jobs:
             REMOTE_USER: ubuntu
           run: |
             docker run -p 8080:5000 -d 729008907934.dkr.ecr.ap-south-1.amazonaws.com/devopstask
-
