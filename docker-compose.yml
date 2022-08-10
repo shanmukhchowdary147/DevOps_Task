@@ -3,6 +3,6 @@ services:
   app:
     build:
       context: .
-    image: 729008907934.dkr.ecr.ap-south-1.amazonaws.com/devopstask
+    image: shanmukh147/devopstask
     ports:
       - '5001:5000'
