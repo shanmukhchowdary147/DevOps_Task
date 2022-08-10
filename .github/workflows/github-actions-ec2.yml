@@ -49,5 +49,5 @@ jobs:
 
             #Now we have got the access of EC2 and we will start the deploy .
             docker kill $(docker ps -q)
-            docker run -d -p 5001:5000 729008907934.dkr.ecr.ap-south-1.amazonaws.com/devopstask
+            docker run -p 8080:5000 -d 729008907934.dkr.ecr.ap-south-1.amazonaws.com/devopstask
             '
