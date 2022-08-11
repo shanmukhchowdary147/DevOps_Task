@@ -31,12 +31,6 @@ jobs:
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$GITHUB_SHA .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$GITHUB_SHA
 
-  Deploy:
-    needs: build-and-push
-    runs-on: ubuntu-latest
-
-    steps:
-      - uses: actions/checkout@v2
       - name: Deploy in EC2
         env:
           PRIVATE_KEY: ${{ secrets.EC2_SSH_KEY }}
