@@ -49,7 +49,7 @@ jobs:
 
             #Now we have got the access of EC2 and we will start the deploy
             sudo su
-            docker kill $(docker ps -q)
+            # docker kill $(docker ps -q)
             # sudo systemctl restart docker.socket docker.service
             # sudo chmod 666 /var/run/docker.sock
             # sudo setfacl --modify user::rw /var/run/docker.sock
