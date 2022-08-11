@@ -5,4 +5,4 @@ services:
       context: .
     image: shanmukh147/devopstask
     ports:
-      - '8080:5000'
+      - '3000:5000'
