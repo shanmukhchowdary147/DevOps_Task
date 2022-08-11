@@ -26,7 +26,7 @@ jobs:
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
           ECR_REPOSITORY: devopstask
-          IMAGE_TAG: latest
+          IMAGE_TAG: $GITHUB_SHA
         run: |
           docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
@@ -53,5 +53,5 @@ jobs:
             # sudo systemctl restart docker.socket docker.service
             # sudo chmod 666 /var/run/docker.sock
             # sudo setfacl --modify user::rw /var/run/docker.sock
-            docker run -p 8001:5000 -d 729008907934.dkr.ecr.ap-south-1.amazonaws.com/devopstask:latest
+            docker run -p 8001:5000 -d 729008907934.dkr.ecr.ap-south-1.amazonaws.com/devopstask:$GITHUB_SHA
             '
